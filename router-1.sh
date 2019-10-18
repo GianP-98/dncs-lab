@@ -9,3 +9,5 @@ sudo ip link set enp0s8 up
 sudo ip link set enp0s8.10 up
 sudo ip link set enp0s8.20 up
 sudo ip link set enp0s9 up
+sudo sysctl -w net.ipv4.ip_forward=1
+sudo ip route add 192.168.33.0/24 via 192.168.34.2
