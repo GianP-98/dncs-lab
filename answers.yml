@@ -2,7 +2,7 @@ FirstName: Gianluca
 LastName: Pilati
 MatriculationNumber: 193731
 AcademicYear: 2019-2020
-GitHubUrl: YourGithubRepositoryURL
+GitHubUrl: https://github.com/GianP-98/dncs-lab
 Subnets:
   HostsA:
     RequiredAddresses: 355
