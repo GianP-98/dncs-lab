@@ -6,18 +6,8 @@ sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add 
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 sudo apt-get update
 sudo apt-get install -y docker-ce
-sudo systemctl start docker
-sudo systemctl enable docker
-touch Dockerfile
-echo '
-FROM ubuntu 
-RUN apt-get update 
-RUN apt-get install nginx -y 
-COPY index.html /var/www/html/ 
-EXPOSE 80 
-CMD ["nginx","-g","daemon off;"]' > Dockerfile
-echo '
-<html>
+
+echo '<html>
 <head>
 <title>Progetto Arnoldi</title> 
 <style>
@@ -35,9 +25,13 @@ echo '
 </body>
 </html>
 '> index.html
-sudo docker build -t nginx .
-sudo docker run -d --name nginxcontainer -p 8000:80 nginx
+
+echo 'FROM dustnic82/nginx-test  
+COPY index.html /usr/share/nginx/html' > Dockerfile
+
+sudo docker build -t my-nginx .
+sudo docker run -d --name nginxcontainer -p 8000:80 my-nginx
+
 sudo ip addr add 192.168.33.7/24 dev enp0s8
 sudo ip link set enp0s8 up
 sudo ip route add default via 192.168.33.1
-
