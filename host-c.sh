@@ -9,19 +9,16 @@ export DEBIAN_FRONTEND=noninteractive
 
 echo '<html>
 <head>
-<title>Progetto Arnoldi</title> 
+<title>Progetto</title> 
 <style>
  h1 {text-align:center; color:blue}
  p {text-align:center;}
- img {display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 40%;}
 </style>
 </head>
 <body>
 <h1>Gianluca Pilati</h1>
 <p>Ingegneria dell informazione e comunicazioni</p>
+<p>Matricola: 193731</p>
 </body>
 </html>
 '> index.html
