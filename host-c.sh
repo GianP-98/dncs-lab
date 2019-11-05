@@ -1,11 +1,11 @@
 export DEBIAN_FRONTEND=noninteractive
 # Startup commands go here
-sudo apt-get update
-sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common
-sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-sudo apt-get update
-sudo apt-get install -y docker-ce
+ apt-get update
+ apt-get install -y apt-transport-https ca-certificates curl software-properties-common
+ curl -fsSL https://download.docker.com/linux/ubuntu/gpg |  apt-key add -
+ add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+ apt-get update
+ apt-get install -y docker-ce
 
 echo '<html>
 <head>
@@ -29,9 +29,9 @@ echo '<html>
 echo 'FROM dustnic82/nginx-test  
 COPY index.html /usr/share/nginx/html' > Dockerfile
 
-sudo docker build -t my-nginx .
-sudo docker run -d --name nginxcontainer -p 8000:80 my-nginx
+ docker build -t my-nginx .
+ docker run -d --name nginxcontainer -p 8000:80 my-nginx
 
-sudo ip addr add 192.168.33.7/24 dev enp0s8
-sudo ip link set enp0s8 up
-sudo ip route add default via 192.168.33.1
+ ip addr add 192.168.33.7/24 dev enp0s8
+ ip link set enp0s8 up
+ ip route add default via 192.168.33.1
