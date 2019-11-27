@@ -26,9 +26,9 @@ echo '<html>
 echo 'FROM dustnic82/nginx-test  
 COPY index.html /usr/share/nginx/html' > Dockerfile
 
- docker build -t my-nginx .
- docker run -d --name nginxcontainer -p 8000:80 my-nginx
+docker build -t my-nginx .
+docker run -d --name nginxcontainer -p 8000:80 my-nginx
 
- ip addr add 192.168.33.7/24 dev enp0s8
- ip link set enp0s8 up
- ip route add default via 192.168.33.1
+ip addr add 192.168.33.7/24 dev enp0s8
+ip link set enp0s8 up
+ip route add default via 192.168.33.1
